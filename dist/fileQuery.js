@@ -26,4 +26,3 @@ class FileQuery {
     }
 }
 exports.FileQuery = FileQuery;
-//# sourceMappingURL=fileQuery.js.map

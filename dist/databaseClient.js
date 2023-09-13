@@ -29,4 +29,3 @@ class DatabaseClient extends pg_1.Client {
     }
 }
 exports.DatabaseClient = DatabaseClient;
-//# sourceMappingURL=databaseClient.js.map

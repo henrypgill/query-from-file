@@ -16,4 +16,3 @@ function checkValidFilePath(path) {
     }
 }
 exports.checkValidFilePath = checkValidFilePath;
-//# sourceMappingURL=utils.js.map

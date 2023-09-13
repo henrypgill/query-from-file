@@ -29,4 +29,3 @@ class DatabasePool extends pg_1.Pool {
     }
 }
 exports.DatabasePool = DatabasePool;
-//# sourceMappingURL=databasePool.js.map
