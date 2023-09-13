@@ -1,0 +1,45 @@
+{
+  "name": "query-from-file",
+  "version": "1.0.0",
+  "description": "query a database using a query contained within a .sql file",
+  "main": "index.js",
+  "scripts": {
+    "build": "yarn clean; tsc",
+    "clean": "rimraf ./dist",
+    "format:check": "prettier --check .",
+    "format": "prettier --write .",
+    "lint": "eslint src",
+    "type-check": "tsc --noEmit",
+    "type-check:watch": "tsc --noEmit --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/henrypgill/query-from-file.git"
+  },
+  "keywords": [
+    "SQL",
+    "PostgreSQL",
+    "TypeScript",
+    "JavaScript"
+  ],
+  "author": "henrypgill",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/henrypgill/query-from-file/issues"
+  },
+  "homepage": "https://github.com/henrypgill/query-from-file#readme",
+  "dependencies": {
+    "pg": "^8.8.0"
+  },
+  "devDependencies": {
+    "@types/node": "^14.14.31",
+    "@types/pg": "^8.6.5",
+    "@typescript-eslint/eslint-plugin": "^5.4.0",
+    "@typescript-eslint/parser": "^5.4.0",
+    "eslint": "^7.28.0",
+    "prettier": "2.3.1",
+    "rimraf": "^3.0.2",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^4.9.3"
+  }
+}
