@@ -21,14 +21,19 @@ yarn add query-from-file
 simply use the DatabaseClient or DatabasePool classes in place of pg's Client and Pool classes respectively.
 Client:
 ```JavaScript
+import { DatabaseClient } from "query-from-file"
+
 const dbClientConfig = {
     /* the config you would use for a pg Client */
     };
+
 const queryDirectory = "./src/queries";
 const dbClient = new DatabaseClient(dbClientConfig, queryDirectory);
 ```
 Pool:
 ```JavaScript
+import { DatabasePool } from "query-from-file"
+
 const dbClientConfig = {
     /* the config you would use for a pg Client */
     };
