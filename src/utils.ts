@@ -1,7 +1,7 @@
 export function checkValidFilePath(path: string): string | unknown {
   try {
-    if (path.match(/[~"#%&*:<>?/\\{|}]+/)) {
-      throw new Error("invalid file path provided for query file");
+    if (path.match(/[~"#%&*:<>?{|}]+/)) {
+      throw new Error(`invalid file path provided for query file: ${path}`);
     }
     if (path.match(/(\.sql)/g))
       throw new Error(

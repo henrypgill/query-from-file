@@ -13,7 +13,7 @@ export class DatabasePool extends Pool {
   
     async fileQuery<T extends number | string>(path: string, values?: T[]) {
       try {
-        const query = new FileQuery(`${this.filePath}/${path}.sql`);
+        const query = new FileQuery(`./${this.filePath}/${path}.sql`);
         if (values) {
           if (values.length !== query.valuesCount)
             throw new Error(

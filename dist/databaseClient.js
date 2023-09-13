@@ -11,7 +11,7 @@ class DatabaseClient extends pg_1.Client {
     }
     async fileQuery(path, values) {
         try {
-            const query = new fileQuery_1.FileQuery(`${this.filePath}/${path}.sql`);
+            const query = new fileQuery_1.FileQuery(`./${this.filePath}/${path}.sql`);
             if (values) {
                 if (values.length !== query.valuesCount)
                     throw new Error(`incorrect number of values passed to query: ${query.path}, received ${values.length} values but expected ${query.valuesCount} values.`);

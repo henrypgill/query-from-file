@@ -9,7 +9,6 @@ export class FileQuery {
     private _valuesCount: number;
   
     constructor(path: string) {
-      checkValidFilePath(path);
       this._path = path;
       this._queryString = this.readQueryString(path);
       this._valuesCount = this._queryString
