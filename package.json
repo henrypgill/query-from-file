@@ -2,7 +2,9 @@
   "name": "query-from-file",
   "version": "1.0.1",
   "description": "query a database using a query contained within a .sql file",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": ["/dist"],
   "scripts": {
     "build": "yarn clean; tsc",
     "clean": "rimraf ./dist",
