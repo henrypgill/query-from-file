@@ -11,7 +11,7 @@ export class DatabaseClient extends Client {
     this.filePath = checkValidFilePath(queryDirectory) ? queryDirectory : "";
   }
 
-  async fileQuery<S, T extends (number | string)[]>(path: string, values?: T) {
+  async fileQuery<S, T extends (number | string)[] | undefined>(path: string, values?: T) {
     try {
       const query = new FileQuery(`./${this.filePath}/${path}.sql`);
       if (values) {
