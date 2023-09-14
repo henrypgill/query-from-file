@@ -11,7 +11,7 @@ export class DatabasePool extends Pool {
       this.filePath = checkValidFilePath(queryDirectory) ? queryDirectory : "";
     }
   
-    async fileQuery<T extends number | string>(path: string, values?: T[]) {
+    async fileQuery<S, T extends (number | string)[]>(path: string, values?: T) {
       try {
         const query = new FileQuery(`./${this.filePath}/${path}.sql`);
         if (values) {
@@ -19,7 +19,7 @@ export class DatabasePool extends Pool {
             throw new Error(
               `incorrect number of values passed to query: ${query.path}, received ${values.length} values but expected ${query.valuesCount} values.`
             );
-          const response = await this.query(query.queryString, values);
+          const response = await this.query<S, T>(query.queryString, values);
           return response
         } else {
           const response = await this.query(query.queryString);
