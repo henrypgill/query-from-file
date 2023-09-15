@@ -4,7 +4,7 @@ import { checkValidFilePath } from "./utils";
 
 
 
-export class DatabaseClient extends Pool {
+export class DatabasePool extends Pool {
   parentDirectory: string;
 
   constructor(config: ClientConfig, queryDirectory: string) {
