@@ -1,6 +1,6 @@
 import { Client, ClientConfig } from "pg";
 export declare class DatabaseClient extends Client {
-    filePath: string;
+    parentDirectory: string;
     constructor(config: ClientConfig, queryDirectory: string);
-    fileQuery<S, T extends (number | string)[] | undefined>(path: string, values?: T): Promise<import("pg").QueryResult<S>>;
+    fileQuery<RowType, ValueType extends unknown[] = unknown[]>(path: string, values?: ValueType): Promise<import("pg").QueryResult<RowType>>;
 }
