@@ -1,6 +1,6 @@
 {
   "name": "query-from-file",
-  "version": "1.1.6",
+  "version": "1.1.7",
   "description": "query a database using a query contained within a .sql file",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
