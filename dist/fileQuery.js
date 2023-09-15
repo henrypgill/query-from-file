@@ -6,9 +6,9 @@ class FileQuery {
     constructor(path) {
         this._path = path;
         this._queryString = this.readQueryString(path);
-        this._valuesCount = this._queryString
-            .split("")
-            .map((query) => query.match(/\$[0-9]*/gi)).length;
+        const queryValues = this._queryString.match(/\$[0-9]*/gi);
+        const uniqueQueryValues = [...new Set(queryValues)];
+        this._valuesCount = queryValues ? uniqueQueryValues.length : 0;
     }
     readQueryString(path) {
         return (0, fs_1.readFileSync)(path).toString();

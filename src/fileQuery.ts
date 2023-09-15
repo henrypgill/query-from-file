@@ -1,5 +1,4 @@
 import { readFileSync } from "fs";
-import { checkValidFilePath } from "./utils";
 
 
 
@@ -11,9 +10,9 @@ export class FileQuery {
     constructor(path: string) {
       this._path = path;
       this._queryString = this.readQueryString(path);
-      this._valuesCount = this._queryString
-        .split("")
-        .map((query) => query.match(/\$[0-9]*/gi)).length;
+      const queryValues = this._queryString.match(/\$[0-9]*/gi);
+      const uniqueQueryValues = [...new Set(queryValues)]
+      this._valuesCount = queryValues ? uniqueQueryValues.length : 0;
     }
   
     private readQueryString(path: string) {
