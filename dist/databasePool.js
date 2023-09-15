@@ -1,10 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DatabaseClient = void 0;
+exports.DatabasePool = void 0;
 const pg_1 = require("pg");
 const fileQuery_1 = require("./fileQuery");
 const utils_1 = require("./utils");
-class DatabaseClient extends pg_1.Pool {
+class DatabasePool extends pg_1.Pool {
     constructor(config, queryDirectory) {
         super(config);
         this.parentDirectory = (0, utils_1.checkValidFilePath)(queryDirectory) ? queryDirectory : "";
@@ -28,4 +28,4 @@ class DatabaseClient extends pg_1.Pool {
         }
     }
 }
-exports.DatabaseClient = DatabaseClient;
+exports.DatabasePool = DatabasePool;
