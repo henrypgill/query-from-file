@@ -11,7 +11,7 @@ module.exports = {
   },
   plugins: ["@typescript-eslint"],
   rules: {
-    "@typescript-eslint/no-explicit-any": 1,
+    "@typescript-eslint/no-explicit-any": 0,
     "@typescript-eslint/no-unused-vars": 0,
     "@typescript-eslint/no-empty-interface": 0,
   },
